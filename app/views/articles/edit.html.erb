@@ -1,0 +1,8 @@
+<h1>Edit an article</h1>
+
+<%= form_with model: @article do |form| %>
+    <%= form.text_field :title, placeholder: "Title" %>
+    <%= form.text_field :info, placeholder: "Information" %>
+    <%= form.submit %>
+<% end %>
+<%= button_to "Back", articles_path, method: :get %>
