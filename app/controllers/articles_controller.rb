@@ -16,7 +16,7 @@ class ArticlesController < ApplicationController
         if @article.valid?
             redirect_to articles_path
         else
-            flash[:errors] = @article,errors.full_messages
+            flash[:errors] = @article.errors.full_messages
             redirect_to new_article.path
         end
     end
@@ -40,6 +40,6 @@ class ArticlesController < ApplicationController
     private
 
     def article_params
-        params.require(:article).permit(:title, :info)
+        params.require(:article).permit(:title, :info, images: [])
     end
 end

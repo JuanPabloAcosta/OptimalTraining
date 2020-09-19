@@ -1,4 +1,6 @@
 <h2><%= @article.title %></h2>
 <p><%= @article.info %></p>
-
+<% @article.images.each do |i| %>
+        <%= image_tag i %>
+<% end %>
 <%= button_to "Back", articles_path, method: :get %>
