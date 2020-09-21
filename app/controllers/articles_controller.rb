@@ -3,6 +3,10 @@ class ArticlesController < ApplicationController
         @articles = Article.all
     end
 
+    def health
+        @articles_about_health = Article.health
+    end
+
     def show
         @article = Article.find(params[:id])
     end
@@ -17,7 +21,7 @@ class ArticlesController < ApplicationController
             redirect_to articles_path
         else
             flash[:errors] = @article.errors.full_messages
-            redirect_to new_article.path
+            redirect_to new_article_path
         end
     end
 

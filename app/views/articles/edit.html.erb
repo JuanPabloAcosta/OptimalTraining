@@ -1,8 +1,10 @@
 <h1>Edit an article</h1>
 
-<%= form_with model: @article do |form| %>
-    <%= form.text_field :title, placeholder: "Title" %>
-    <%= form.text_field :info, placeholder: "Information" %>
-    <%= form.submit %>
+<%= form_with model: @article do |f| %>
+    <%= f.text_field :title, placeholder: "Title" %>
+    <%= f.text_field :info, placeholder: "Information" %>
+    <%= f.label "Attachments" %>
+    <%= f.file_field :images, multiple: true %>
+    <%= f.submit %>
 <% end %>
 <%= button_to "Back", articles_path, method: :get %>

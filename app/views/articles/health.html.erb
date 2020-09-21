@@ -1,0 +1,10 @@
+<h1>Health Articles</h1>
+
+<%= button_to "Add new article", new_article_path, method: :get %>
+<ul>
+  <% @articles_about_health.each do |article| %>
+    <li><%= link_to article.title, article_path(article)%></li>
+    <%= button_to "Edit article", edit_article_path(article), method: :get %>
+    <%= button_to "Destroy article", article_path(article), method: :delete, data: {confirm: "Are you sure?"} %>
+  <%end%>  
+</ul>
